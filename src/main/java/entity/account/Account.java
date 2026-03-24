@@ -1,4 +1,8 @@
+package entity.account;
 
+import entity.bank.Bank;
+import entity.user.User;
+import method.IReportable;
 
 public abstract class Account implements IReportable {
     private final long accountNumber;

@@ -1,3 +1,9 @@
+package entity.user;
+
+import entity.account.Account;
+import entity.bank.Bank;
+import method.IReportable;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

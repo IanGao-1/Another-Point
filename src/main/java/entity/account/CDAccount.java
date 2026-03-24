@@ -1,3 +1,7 @@
+package entity.account;
+
+import entity.user.User;
+
 import java.time.LocalDate;
 
 public class CDAccount extends Account {
