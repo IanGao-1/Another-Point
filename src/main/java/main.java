@@ -1,8 +1,10 @@
-import entity.account.CDAccount;
-import entity.account.CheckingAccount;
-import entity.account.SavingsAccount;
-import entity.bank.Bank;
-import entity.user.User;
+package src.main.java;
+
+import src.main.java.entity.account.CDAccount;
+import src.main.java.entity.account.CheckingAccount;
+import src.main.java.entity.account.SavingsAccount;
+import src.main.java.entity.bank.Bank;
+import src.main.java.entity.user.User;
 
 import java.time.LocalDate;
 

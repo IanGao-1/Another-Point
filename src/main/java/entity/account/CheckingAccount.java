@@ -1,6 +1,6 @@
-package entity.account;
+package src.main.java.entity.account;//package entity.account;
 
-import entity.user.User;
+import src.main.java.entity.user.User;
 
 public class CheckingAccount extends Account {
     private final double overdraftLimit;
@@ -14,10 +14,6 @@ public class CheckingAccount extends Account {
 
     @Override
     public boolean withdraw(double amount) {
-        if (amount <= 0) {
-            System.out.println("Withdrawal amount must be positive");
-            return false;
-        }
         double availableFunds = getBalance() + overdraftLimit;
         if (amount > availableFunds) {
             System.out.printf("Withdrawal failed: Insufficient funds (including overdraft) in account %d. " +

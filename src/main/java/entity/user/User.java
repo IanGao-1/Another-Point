@@ -1,7 +1,7 @@
-package entity.user;
+package src.main.java.entity.user;
 
-import entity.account.Account;
-import entity.bank.Bank;
+import src.main.java.entity.account.Account;
+import src.main.java.entity.bank.Bank;
 import method.IReportable;
 
 import java.util.ArrayList;

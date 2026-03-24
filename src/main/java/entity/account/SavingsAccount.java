@@ -1,6 +1,6 @@
-package entity.account;
+package src.main.java.entity.account;//package entity.account;
 
-import entity.user.User;
+import src.main.java.entity.user.User;
 
 public class SavingsAccount extends Account {
     private final double interestRate;
