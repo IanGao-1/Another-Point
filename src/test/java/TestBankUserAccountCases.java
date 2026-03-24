@@ -10,12 +10,19 @@ import java.time.LocalDate;
 
 public class TestBankUserAccountCases {
     public static void main(String[] args) {
+        run("Global Trust Bank - Xi'an Another Point Branch");
+    }
+
+    public static void run(String bankName) {
         System.out.println("\n--- Creating Users ---");
 
-        Bank bank = new Bank("Global Trust Bank");
+        Bank bank = new Bank(bankName);
 
         User alice = bank.addUser("Alice Smith", "alice@example.com");
+
+        // Test Duplicate user
         bank.addUser("Alice Smith", "alice@example.com");
+
         User bob = bank.addUser("Bob Johnson", "bob@example.com");
         User charlie = bank.addUser("Charlie Brown", "charlie@example.com");
 

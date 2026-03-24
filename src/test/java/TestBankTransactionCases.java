@@ -10,7 +10,11 @@ import java.time.LocalDate;
 
 public class TestBankTransactionCases {
     public static void main(String[] args) {
-        Bank bank = new Bank("Global Trust Bank");
+        run("Global Trust Bank - Xi'an Another Point Branch");
+    }
+
+    public static void run(String bankName) {
+        Bank bank = new Bank(bankName);
 
         User alice = bank.addUser("Alice Smith", "alice@example.com");
         User bob = bank.addUser("Bob Johnson", "bob@example.com");

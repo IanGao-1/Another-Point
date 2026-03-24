@@ -1,17 +1,19 @@
 package src.test.java;
 
 public class TestBank {
+    private static final String BANK_NAME = "Global Trust Bank - Xi'an Another Point Branch";
+
     public static void main(String[] args) {
         System.out.println("=== Starting Online Banking System Demo ===");
 
         System.out.println("\n[1] User and account test cases");
-        TestBankUserAccountCases.main(args);
+        TestBankUserAccountCases.run(BANK_NAME);
 
         System.out.println("\n[2] Transaction and account closing test cases");
-        TestBankTransactionCases.main(args);
+        TestBankTransactionCases.run(BANK_NAME);
 
         System.out.println("\n[3] Transfer test cases");
-        TestBankTransferCases.main(args);
+        TestBankTransferCases.run(BANK_NAME);
 
         System.out.println("\n=== Demo Complete ===");
     }
