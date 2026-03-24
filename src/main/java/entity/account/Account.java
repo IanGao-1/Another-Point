@@ -9,15 +9,35 @@ public abstract class Account implements IReportable {
     protected double balance;
     private final User owner;
     private final String accountType;
+    private AccountStatus accountStatus;
+
+    // 冻结/解冻方法
+    public void freezeAccount() {
+        this.accountStatus = AccountStatus.FROZEN;
+        System.out.println("账户已冻结：" + getAccountNumber());
+    }
+    public void unfreezeAccount() {
+        this.accountStatus = AccountStatus.NORMAL;
+        System.out.println("账户已解冻：" + getAccountNumber());
+    }
+    // 状态校验
+    public boolean isFrozen() {
+        return accountStatus == AccountStatus.FROZEN;
+    }
 
     public Account(User owner, String accountType, double initialDeposit) {
         this.accountNumber = Bank.getNextAccountNumber();
         this.owner = owner;
         this.accountType = accountType;
         this.balance = initialDeposit;
+        this.accountStatus = AccountStatus.NORMAL;
     }
 
     public void deposit(double amount) {
+        if (accountStatus == AccountStatus.FROZEN) {
+            System.out.println("Deposit failed: Account has been frozen!");
+            throw new IllegalArgumentException("Account has been frozen!");
+        }
         if (amount <= 0) {
             throw new IllegalArgumentException("Deposit amount must be positive");
         }
@@ -27,6 +47,10 @@ public abstract class Account implements IReportable {
     }
 
     public boolean withdraw(double amount) {
+        if (accountStatus == AccountStatus.FROZEN) {
+            System.out.println("Deposit failed: Account has been frozen!");
+            return false;
+        }
         if (amount > balance) {
             System.out.printf("Withdrawal failed: Insufficient balance in account %d. " +
                     "Requested: $%.2f, Available: $%.2f%n", accountNumber, amount, balance);
