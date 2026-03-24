@@ -36,6 +36,6 @@ public class CDAccount extends Account {
     @Override
     public void displayReport() {
         System.out.printf("Account Number: %d | Type: CD | Balance: $%.2f | Term: %d months | Maturity Date: %s | Owner: %s (ID: %d)%n",
-                getAccountNumber(), getBalance(), termMonths, maturityDate, getOwner().getName(), getOwner().getUserId());
+                getAccountNumber(), getBalance(), termMonths, maturityDate, getOwner().getUserName(), getOwner().getUserId());
     }
 }

@@ -16,9 +16,9 @@ public class main {
 
         // Create users (3 total)
         System.out.println("\n--- Creating Users ---");
-        User alice = bank.addUser("Alice Smith", "alice@example.com");
-        User bob = bank.addUser("Bob Johnson", "bob@example.com");
-        User charlie = bank.addUser("Charlie Brown", "charlie@example.com");
+        User alice = bank.addUser("Alice Smith", "alice@example.com","176389457629479","173491747357926");
+        User bob = bank.addUser("Bob Johnson", "bob@example.com","74659801704","83740839562764050");
+        User charlie = bank.addUser("Charlie Brown", "charlie@example.com","732470135","4y352948850985929");
 
         // Create accounts (max 3 per user)
         System.out.println("\n--- Creating Accounts ---");

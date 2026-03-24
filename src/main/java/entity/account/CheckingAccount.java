@@ -33,6 +33,6 @@ public class CheckingAccount extends Account {
     @Override
     public void displayReport() {
         System.out.printf("Account Number: %d | Type: Checking | Balance: $%.2f | Overdraft Limit: $%.2f | Owner: %s (ID: %d)%n",
-                getAccountNumber(), getBalance(), overdraftLimit, getOwner().getName(), getOwner().getUserId());
+                getAccountNumber(), getBalance(), overdraftLimit, getOwner().getUserName(), getOwner().getUserId());
     }
 }

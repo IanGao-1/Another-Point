@@ -28,10 +28,10 @@ public class Bank implements IReportable {
     public static long getNextAccountNumber() { return nextAccountNumber++; }
 
     // User management
-    public User addUser(String name, String email) {
-        User user = new User(name, email);
+    public User addUser(String userName, String email,String phoneNumber, String idNumber) {
+        User user = new User(userName, email,phoneNumber,idNumber);
         users.add(user);
-        System.out.printf("User added: %s (ID: %d, Email: %s)%n", name, user.getUserId(), email);
+        System.out.printf("User added: %s (ID: %d, Email: %s)%n", userName, user.getUserId(), email);
         return user;
     }
 

@@ -47,6 +47,6 @@ public abstract class Account implements IReportable {
     @Override
     public void displayReport() {
         System.out.printf("Account Number: %d | Type: %s | Balance: $%.2f | Owner: %s (ID: %d)%n",
-                accountNumber, accountType, balance, owner.getName(), owner.getUserId());
+                accountNumber, accountType, balance, owner.getUserName(), owner.getUserId());
     }
 }

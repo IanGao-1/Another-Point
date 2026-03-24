@@ -15,6 +15,6 @@ public class SavingsAccount extends Account {
     @Override
     public void displayReport() {
         System.out.printf("Account Number: %d | Type: Savings | Balance: $%.2f | Interest Rate: %.2f%% | Owner: %s (ID: %d)%n",
-                getAccountNumber(), getBalance(), interestRate * 100, getOwner().getName(), getOwner().getUserId());
+                getAccountNumber(), getBalance(), interestRate * 100, getOwner().getUserName(), getOwner().getUserId());
     }
 }
