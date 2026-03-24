@@ -49,4 +49,38 @@ public abstract class Account implements IReportable {
         System.out.printf("Account Number: %d | Type: %s | Balance: $%.2f | Owner: %s (ID: %d)%n",
                 accountNumber, accountType, balance, owner.getName(), owner.getUserId());
     }
+    /**
+     * 转账到另一个账户
+     */
+    public boolean transfer(Account targetAccount, double amount) {
+        // 1. 验证目标账户
+        if (targetAccount == null) {
+            System.out.println("Error: Target account cannot be null");
+            return false;
+        }
+
+        // 2. 防止转账给自己
+        if (this.accountNumber == targetAccount.getAccountNumber()) {
+            System.out.println("Error: Cannot transfer to the same account");
+            return false;
+        }
+
+        // 3. 先取款
+        if (!this.withdraw(amount)) {
+            return false;
+        }
+
+        // 4. 再存款到目标账户
+        try {
+            targetAccount.deposit(amount);
+            System.out.printf("Transferred $%.2f from account %d to account %d%n",
+                    amount, this.accountNumber, targetAccount.getAccountNumber());
+            return true;
+        } catch (IllegalArgumentException e) {
+            // 如果目标账户存款失败，需要回滚取款
+            this.deposit(amount);
+            System.out.printf("Transfer failed: %s%n", e.getMessage());
+            return false;
+        }
+    }
 }
