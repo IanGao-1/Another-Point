@@ -1,3 +1,7 @@
+package entity.account;
+
+import entity.user.User;
+
 public class SavingsAccount extends Account {
     private final double interestRate;
 

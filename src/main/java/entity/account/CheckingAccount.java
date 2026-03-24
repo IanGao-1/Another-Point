@@ -1,3 +1,7 @@
+package entity.account;
+
+import entity.user.User;
+
 public class CheckingAccount extends Account {
     private final double overdraftLimit;
 
